@@ -2,22 +2,21 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Vila Kuchastana | Eco-Rústic Beach Villa en Jericoacoara – Sitio Oficial</title>
+  <title>Vila Kuchastana | Eco-Rústic Villa en Jericoacoara – Sitio Oficial</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sitio oficial de Vila Kuchastana, eco-rústic beach villa en Jericoacoara. Fotos, detalles de la propiedad, potencial de inversión y contacto directo con el propietario. Desert and Sea Spirit.">
+  <meta name="description" content="Sitio oficial de Vila Kuchastana, eco-rústic villa en Jericoacoara. Fotos, detalles de la propiedad, potencial de inversión y contacto directo con el propietario. Desert and Sea Spirit.">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Vila Kuchastana | Eco-Rústic Beach Villa en Jericoacoara">
+  <meta property="og:title" content="Vila Kuchastana | Eco-Rústic Villa en Jericoacoara">
   <meta property="og:description" content="Villa con diseño eco-rústico entre las dunas y el mar. Descubre Vila Kuchastana.">
   <meta property="og:image" content="assets/vila-kuchastana-fachada-principal.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kuchastana.com/">
 
-  <!-- Favicon opcional -->
+  <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/logo-vila-kuchastana.jpg">
 
-  <!-- Estilos básicos -->
   <style>
     :root {
       --color-bg: #f5f1e8;
@@ -25,15 +24,14 @@
       --color-text: #2b2620;
       --color-accent: #cba36b;
       --color-accent-dark: #8a6c3b;
+      --color-whatsapp: #25D366;
       --radius: 10px;
       --shadow-soft: 0 8px 24px rgba(0,0,0,0.12);
       --font-title: "Playfair Display", "Georgia", serif;
       --font-body: system-ui, -apple-system, BlinkMacSystemFont, -apple-system, sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -56,9 +54,7 @@
 
     header {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       backdrop-filter: blur(10px);
       background: rgba(245,241,232,0.9);
@@ -73,6 +69,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
+      flex-wrap: wrap;
     }
 
     .brand {
@@ -100,19 +97,44 @@
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      margin: 0;
+      padding: 0;
     }
 
     nav a {
       padding-bottom: 2px;
       border-bottom: 1px solid transparent;
     }
+
     nav a:hover {
       border-color: var(--color-accent);
     }
 
+    .lang-switch {
+      display: flex;
+      gap: 6px;
+      font-size: 18px;
+      align-items: center;
+    }
+
+    .lang-switch a {
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    .lang-switch a:hover {
+      background: rgba(0,0,0,0.08);
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
     .hero {
       position: relative;
-      margin-top: 64px; /* espacio por el header fijo */
+      margin-top: 64px;
       min-height: 80vh;
       display: flex;
       align-items: flex-end;
@@ -177,6 +199,17 @@
     .btn-primary:hover {
       background: var(--color-accent-dark);
       border-color: var(--color-accent-dark);
+    }
+
+    .btn-whatsapp {
+      background: var(--color-whatsapp);
+      color: #fff;
+      border-color: var(--color-whatsapp);
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe57;
+      border-color: #1ebe57;
     }
 
     .btn-ghost {
@@ -308,7 +341,9 @@
       margin-top: 14px;
     }
 
-    form input, form textarea, form select {
+    form input,
+    form textarea,
+    form select {
       width: 100%;
       padding: 9px 10px;
       border-radius: 6px;
@@ -353,10 +388,6 @@
         align-items: flex-start;
       }
 
-      nav ul {
-        padding-left: 0;
-      }
-
       .hero {
         margin-top: 0;
         min-height: 70vh;
@@ -371,7 +402,7 @@
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "Vila Kuchastana",
-    "description": "Eco-rústic beach villa en Jericoacoara, ideal para vivir, invertir o transformar en pousada boutique.",
+    "description": "Eco-rústic villa en Jericoacoara, ideal para vivir, invertir o transformar en pousada boutique.",
     "image": [
       "https://kuchastana.com/assets/vila-kuchastana-fachada-principal.jpg",
       "https://kuchastana.com/assets/vila-kuchastana-jardin-exterior.jpg"
@@ -395,29 +426,41 @@
       <img src="assets/logo-vila-kuchastana.jpg" alt="Logo Vila Kuchastana">
       <div>Vila Kuchastana</div>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#villa">La Villa</a></li>
-        <li><a href="#gallery">Galería</a></li>
-        <li><a href="#location">Ubicación</a></li>
-        <li><a href="#investment">Inversión</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
+
+    <div class="top-bar">
+      <nav>
+        <ul>
+          <li><a href="#villa">La Villa</a></li>
+          <li><a href="#gallery">Galería</a></li>
+          <li><a href="#location">Ubicación</a></li>
+          <li><a href="#investment">Inversión</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="lang-switch">
+        <a href="#es" aria-label="Español">🇪🇸</a>
+        <a href="#pt" aria-label="Português">🇧🇷</a>
+        <a href="#en" aria-label="English">🇬🇧</a>
+      </div>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-kicker">DESERT AND SEA SPIRIT · JERICOACOARA</div>
-    <h1 class="hero-title">Eco-Rústic Beach Villa lista para tu historia.</h1>
+    <h1 class="hero-title">Eco-Rústic Villa lista para tu historia.</h1>
     <p class="hero-subtitle">
       Vila Kuchastana es una casa con alma, construida en hormigón sólido y madera natural, pensada para vivir,
       disfrutar o transformar en una pousada boutique en uno de los destinos más deseados de Brasil.
     </p>
     <div class="hero-buttons">
       <a href="#villa" class="btn btn-primary">Explorar la villa</a>
-      <a href="#contact" class="btn btn-ghost">Solicitar información privada</a>
+      <a href="https://wa.me/34616843816?text=Hola%2C%20me%20interesa%20Vila%20Kuchastana%20en%20Jericoacoara"
+         class="btn btn-whatsapp" target="_blank" rel="noopener">
+        Solicitar info por WhatsApp
+      </a>
     </div>
   </div>
 </section>
@@ -494,13 +537,13 @@
         </div>
       </div>
       <div class="location-map">
-        <!-- Reemplaza src del iframe con tu mapa exacto cuando quieras -->
         <iframe
           title="Mapa Vila Kuchastana Jericoacoara"
-          src="https://www.google.com/maps/embed?pb="
+          src="https://www.google.com/maps/embed?pb=!4m6!3m5!1s0x7e9871bc636b3ef:0x27da8305ab6044a8!8m2!3d-2.7990801!4d-40.5085549!16s%2Fg%2F11rmtwn5vl"
           width="100%"
           height="100%"
           style="border:0;"
+          allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
@@ -540,11 +583,11 @@
     <div class="section-kicker">CONTACTO DIRECTO</div>
     <h2>Solicita información privada sobre Vila Kuchastana</h2>
     <p>
-      Completa el formulario y recibirás respuesta directa del propietario. Sin intermediarios, sin presión.
+      Completa el formulario o escribe directo por WhatsApp para hablar con el propietario. Sin intermediarios, sin presión.
     </p>
     <div class="card">
       <form action="https://formspree.io/f/your-endpoint" method="POST">
-        <!-- Sustituir por endpoint real (Formspree / backend propio) -->
+        <!-- Sustituir por endpoint real si decides usar formulario -->
         <input type="text" name="name" placeholder="Nombre completo" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="text" name="country" placeholder="País / Ciudad">
@@ -559,8 +602,14 @@
         <button type="submit" class="btn btn-primary">Enviar mensaje privado</button>
       </form>
       <p style="margin-top:10px;font-size:12px;">
-        También puedes escribir directamente a:
-        <strong>igoribiza@gmail.com</strong> · WhatsApp: <strong>+34 616 843 816</strong>
+        O contáctanos directamente por WhatsApp:
+        <a href="https://wa.me/34616843816?text=Hola%2C%20me%20interesa%20Vila%20Kuchastana%20en%20Jericoacoara"
+           class="btn btn-whatsapp" target="_blank" rel="noopener">
+          Escribir por WhatsApp
+        </a>
+      </p>
+      <p style="margin-top:6px;font-size:12px;">
+        Email directo: <strong>igoribiza@gmail.com</strong>
       </p>
     </div>
   </section>
