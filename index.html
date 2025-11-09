@@ -1,1 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vila Kuchastana | Eco-Rústic Beach Villa en Jericoacoara – Sitio Oficial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sitio oficial de Vila Kuchastana, eco-rústic beach villa en Jericoacoara. Fotos, detalles de la propiedad, potencial de inversión y contacto directo con el propietario. Desert and Sea Spirit.">
+  <meta name="robots" content="index,follow">
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vila Kuchastana | Eco-Rústic Beach Villa en Jericoacoara">
+  <meta property="og:description" content="Villa con diseño eco-rústico entre las dunas y el mar. Descubre Vila Kuchastana.">
+  <meta property="og:image" content="assets/vila-kuchastana-fachada-principal.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kuchastana.com/">
+
+  <!-- Favicon opcional -->
+  <link rel="icon" type="image/jpeg" href="assets/logo-vila-kuchastana.jpg">
+
+  <!-- Estilos básicos -->
+  <style>
+    :root {
+      --color-bg: #f5f1e8;
+      --color-bg-alt: #fffaf2;
+      --color-text: #2b2620;
+      --color-accent: #cba36b;
+      --color-accent-dark: #8a6c3b;
+      --radius: 10px;
+      --shadow-soft: 0 8px 24px rgba(0,0,0,0.12);
+      --font-title: "Playfair Display", "Georgia", serif;
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(245,241,232,0.9);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-title);
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    nav a {
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+    }
+    nav a:hover {
+      border-color: var(--color-accent);
+    }
+
+    .hero {
+      position: relative;
+      margin-top: 64px; /* espacio por el header fijo */
+      min-height: 80vh;
+      display: flex;
+      align-items: flex-end;
+      color: #ffffff;
+      background:
+        linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0.05)),
+        url("assets/vila-kuchastana-fachada-principal.jpg") center center / cover no-repeat;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 56px;
+    }
+
+    .hero-kicker {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.95;
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: clamp(30px, 5vw, 46px);
+      margin: 8px 0 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      max-width: 520px;
+      opacity: 0.96;
+    }
+
+    .hero-buttons {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-accent-dark);
+      border-color: var(--color-accent-dark);
+    }
+
+    .btn-ghost {
+      background: rgba(0,0,0,0.28);
+      color: #fff;
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(0,0,0,0.45);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    section {
+      margin-top: 48px;
+    }
+
+    h2 {
+      font-family: var(--font-title);
+      font-size: 26px;
+      margin: 0 0 10px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--color-accent-dark);
+      margin-bottom: 4px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.8fr) minmax(260px, 1.2fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card {
+      padding: 18px 18px 16px;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #efe1cc;
+      color: #4a3823;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: var(--radius);
+      object-fit: cover;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+    }
+
+    .location-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1.3fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .location-map {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: #ddd;
+      min-height: 260px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+      font-size: 11px;
+      color: #7b6a53;
+    }
+
+    .invest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .invest-item {
+      padding: 14px;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      font-size: 14px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 9px 10px;
+      border-radius: 6px;
+      border: 1px solid #d2c5b2;
+      font-family: var(--font-body);
+      font-size: 13px;
+      background-color: #fffdf8;
+    }
+
+    form textarea {
+      grid-column: 1 / -1;
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    form button {
+      margin-top: 4px;
+      grid-column: 1 / -1;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 11px;
+      color: #7c6a57;
+      background: #f0e4d4;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    @media (max-width: 768px) {
+      .two-col,
+      .location-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        position: sticky;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        padding-left: 0;
+      }
+
+      .hero {
+        margin-top: 0;
+        min-height: 70vh;
+        align-items: flex-end;
+      }
+    }
+  </style>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Vila Kuchastana",
+    "description": "Eco-rústic beach villa en Jericoacoara, ideal para vivir, invertir o transformar en pousada boutique.",
+    "image": [
+      "https://kuchastana.com/assets/vila-kuchastana-fachada-principal.jpg",
+      "https://kuchastana.com/assets/vila-kuchastana-jardin-exterior.jpg"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jijoca de Jericoacoara",
+      "addressRegion": "Ceará",
+      "addressCountry": "BR"
+    },
+    "url": "https://kuchastana.com/"
+  }
+  </script>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="brand">
+      <img src="assets/logo-vila-kuchastana.jpg" alt="Logo Vila Kuchastana">
+      <div>Vila Kuchastana</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#villa">La Villa</a></li>
+        <li><a href="#gallery">Galería</a></li>
+        <li><a href="#location">Ubicación</a></li>
+        <li><a href="#investment">Inversión</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">DESERT AND SEA SPIRIT · JERICOACOARA</div>
+    <h1 class="hero-title">Eco-Rústic Beach Villa lista para tu historia.</h1>
+    <p class="hero-subtitle">
+      Vila Kuchastana es una casa con alma, construida en hormigón sólido y madera natural, pensada para vivir,
+      disfrutar o transformar en una pousada boutique en uno de los destinos más deseados de Brasil.
+    </p>
+    <div class="hero-buttons">
+      <a href="#villa" class="btn btn-primary">Explorar la villa</a>
+      <a href="#contact" class="btn btn-ghost">Solicitar información privada</a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- La Villa -->
+  <section id="villa">
+    <div class="section-kicker">LA VILLA</div>
+    <h2>Vila Kuchastana · Desert and Sea Spirit</h2>
+    <div class="two-col">
+      <div>
+        <p>
+          Entre las dunas y el mar de Jericoacoara, Vila Kuchastana combina estructura sólida de hormigón,
+          grandes ventanales de vidrio y detalles de madera rústica. Un diseño limpio, preparado para ser
+          afinado a tu estilo sin perder la esencia del lugar.
+        </p>
+        <div class="pill-list">
+          <div class="pill">2 plantas</div>
+          <div class="pill">4 habitaciones</div>
+          <div class="pill">Balcón de madera</div>
+          <div class="pill">Jardín tropical</div>
+          <div class="pill">Valla rústica natural</div>
+          <div class="pill">Potencial pousada boutique</div>
+        </div>
+      </div>
+      <div class="card">
+        <strong>Lo que hace única a Vila Kuchastana</strong>
+        <ul>
+          <li>Estructura moderna ya construida: ahorras tiempo y obra pesada.</li>
+          <li>Estética eco-rústica alineada con el espíritu de Jericoacoara.</li>
+          <li>Espacios pensados para privacidad: ideal para suites independientes.</li>
+          <li>Casa lista para vivir ahora y mejorar mientras valoriza.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="gallery">
+    <div class="section-kicker">GALERÍA</div>
+    <h2>Conoce Vila Kuchastana</h2>
+    <p>Imágenes reales de la villa: fachada, jardín, habitaciones y detalles que reflejan su carácter natural.</p>
+    <div class="gallery-grid">
+      <img src="assets/vila-kuchastana-fachada-principal.jpg" alt="Fachada principal de Vila Kuchastana con diseño rústico-moderno en Jericoacoara">
+      <img src="assets/vila-kuchastana-fachada-lateral.jpg" alt="Vista lateral de Vila Kuchastana con baranda de madera y palmeras tropicales">
+      <img src="assets/vila-kuchastana-jardin-exterior.jpg" alt="Exterior de la villa con muros claros y cercado de madera rústica">
+      <img src="assets/vila-kuchastana-jardin-entrada.jpg" alt="Entrada a la villa con valla de madera natural y palmeras verdes">
+      <img src="assets/vila-kuchastana-jardin-interior.jpg" alt="Zona interior del jardín con luz cálida y vegetación tropical">
+      <img src="assets/vila-kuchastana-jardin-terraza.jpg" alt="Terraza con vista al jardín y ambiente relajado de Jericoacoara">
+      <img src="assets/vila-kuchastana-habitacion-doble.jpg" alt="Habitación doble luminosa con cortinas blancas y ventana de madera">
+      <img src="assets/vila-kuchastana-habitacion-vista-jardin.jpg" alt="Habitación con vista al jardín tropical en Vila Kuchastana">
+      <img src="assets/vila-kuchastana-bano-suite.jpg" alt="Baño principal con estilo eco-rústico y detalles naturales en Vila Kuchastana">
+      <img src="assets/vila-kuchastana-jardin-palmeras.jpg" alt="Palmeras tropicales junto a la fachada de Vila Kuchastana">
+    </div>
+  </section>
+
+  <!-- Ubicación -->
+  <section id="location">
+    <div class="section-kicker">UBICACIÓN</div>
+    <h2>Entre las dunas y el mar de Jericoacoara</h2>
+    <div class="location-wrap">
+      <div>
+        <p>
+          Vila Kuchastana se ubica en una zona tranquila, con fácil acceso a la playa de Jericoacoara,
+          al centro y a las dunas del atardecer. Un punto estratégico para vivir en calma o recibir huéspedes
+          que buscan autenticidad lejos del ruido.
+        </p>
+        <div class="tag-list">
+          <span>Zona alta y ventilada</span>
+          <span>Caminable a la playa</span>
+          <span>Entorno residencial</span>
+          <span>Potencial comercial discreto</span>
+        </div>
+      </div>
+      <div class="location-map">
+        <!-- Reemplaza src del iframe con tu mapa exacto cuando quieras -->
+        <iframe
+          title="Mapa Vila Kuchastana Jericoacoara"
+          src="https://www.google.com/maps/embed?pb="
+          width="100%"
+          height="100%"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inversión -->
+  <section id="investment">
+    <div class="section-kicker">INVERSIÓN</div>
+    <h2>Más que una casa, una oportunidad</h2>
+    <div class="invest-grid">
+      <div class="invest-item">
+        <strong>Uso personal</strong>
+        <p>Refugio propio en uno de los destinos más icónicos de Brasil, con espacio para familia, amigos y visitas especiales.</p>
+      </div>
+      <div class="invest-item">
+        <strong>Pousada boutique</strong>
+        <p>Distribución ideal para suites independientes con acceso propio, manteniendo un storytelling eco-rústico muy vendible.</p>
+      </div>
+      <div class="invest-item">
+        <strong>Renta vacacional</strong>
+        <p>Alta demanda en Jericoacoara. Posibilidad de operar como villa completa o por unidades, con calendario online futuro.</p>
+      </div>
+      <div class="invest-item">
+        <strong>Potencial de valorización</strong>
+        <p>Estructura moderna ya ejecutada reduce riesgos de obra y permite enfocar inversión en acabados de alto impacto.</p>
+      </div>
+    </div>
+    <p style="margin-top:10px;font-size:13px;">
+      Si deseas recibir un dossier detallado con planos, estado actual de la obra y escenarios de retorno, solicita información privada a continuación.
+    </p>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact">
+    <div class="section-kicker">CONTACTO DIRECTO</div>
+    <h2>Solicita información privada sobre Vila Kuchastana</h2>
+    <p>
+      Completa el formulario y recibirás respuesta directa del propietario. Sin intermediarios, sin presión.
+    </p>
+    <div class="card">
+      <form action="https://formspree.io/f/your-endpoint" method="POST">
+        <!-- Sustituir por endpoint real (Formspree / backend propio) -->
+        <input type="text" name="name" placeholder="Nombre completo" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="country" placeholder="País / Ciudad">
+        <select name="interest">
+          <option value="">Interés principal</option>
+          <option value="compra">Compra de la propiedad</option>
+          <option value="inversion">Inversión / pousada boutique</option>
+          <option value="alquiler-futuro">Alquiler futuro por temporadas</option>
+          <option value="otro">Otro</option>
+        </select>
+        <textarea name="message" placeholder="Cuéntanos brevemente qué estás buscando."></textarea>
+        <button type="submit" class="btn btn-primary">Enviar mensaje privado</button>
+      </form>
+      <p style="margin-top:10px;font-size:12px;">
+        También puedes escribir directamente a:
+        <strong>igoribiza@gmail.com</strong> · WhatsApp: <strong>+34 616 843 816</strong>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  KUCHASTANA · Desert and Sea Spirit · Jericoacoara, Ceará · Sitio oficial
+</footer>
+
+</body>
+</html>
